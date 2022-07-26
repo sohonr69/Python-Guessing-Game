@@ -9,19 +9,19 @@ print("Play stupid game, win stupid prizes.")
 
 print("======================================================== \n")
 
-startSeed = input("Enter starting range : ") #asking input for starting seed
-endSeed = input("Enter ending range : ")    #asking input for limit number
+startSeed = input("Enter starting range : ")
+endSeed = input("Enter ending range : ")    
 
-number = random.randint(int(startSeed), int(endSeed))   #here random number generated is stored to "number" variable
-                                                        #since passing variable as argument passed variables as string int() method is used to convert to int which is predefined method                                                    
+number = random.randint(int(startSeed), int(endSeed))   
 
+answer = input("\nEnter your guess : ")
 
-answer = input("Enter your guess : ") #asking input from user
+while int(answer) != int(number):
 
-
-while int(answer) != int(number):  #a simple while loop to run an expression while the answer provided by user is false
-                                   #note that int() method is beign used here, if not used python treates both the variables as string 
-    answer = input("Try again : ") 
+     if int(answer) < int(number):
+        answer = input("Higher : ")
+     if int(answer) > int(number):
+        answer = input("Lower : ")
     
 
 print("You have won stupid prize :D")
